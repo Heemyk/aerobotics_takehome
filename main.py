@@ -70,3 +70,10 @@ async def get_missing_trees(orchard_id: int) -> Dict[str, List[Dict[str, float]]
 if __name__ == "__main__":
     import uvicorn
     uvicorn.run(app, host="0.0.0.0", port=8000)
+
+
+
+@app.get("/health")
+async def health_check():
+    """Health check endpoint."""
+    return {"status": "healthy"}
